@@ -170,3 +170,34 @@ ACMD:[1]afix(playerid, params[])
 	RepairVehicle(GetPlayerVehicleID(playerid));
 	return 1;
 }
+
+CMD:aduty(playerid, params[])
+{
+    if(Admin_GetPlayerLevel(playerid) < 1) {
+        return SendErrorMsg(playerid, "You don't have permission to use this command");
+    }
+    
+    new currentDuty = Admin_IsOnDuty(playerid);
+    new currentClass = Player_GetClass(playerid);
+    
+    Admin_SetPlayerDuty(playerid, !currentDuty);
+    
+    if(!currentDuty) {
+        // On Duty - Set warna admin
+        SetPlayerColor(playerid, COLOR_MODERATION);
+        SendMsgF(playerid, COLOR_MODERATION, "[ADMIN DUTY]: You are now ON DUTY");
+        SendAdminMsgF("Admin %p(%d) is now ON DUTY", playerid, playerid);
+    } else {
+        // Off Duty - Kembalikan warna sesuai class
+        switch(currentClass) {
+            case TEAM_CIVILIAN: SetPlayerColor(playerid, COLOR_WHITE);
+            case TEAM_POLICE: SetPlayerColor(playerid, COLOR_BLUE);
+            case TEAM_MEDIC: SetPlayerColor(playerid, COLOR_GREEN);
+            case TEAM_ARMY: SetPlayerColor(playerid, COLOR_PURPLE);
+            default: SetPlayerColor(playerid, COLOR_WHITE);
+        }
+        SendMsgF(playerid, COLOR_MODERATION, "[ADMIN DUTY]: You are now OFF DUTY");
+        SendAdminMsgF("Admin %p(%d) is now OFF DUTY", playerid, playerid);
+    }
+    return 1;
+}

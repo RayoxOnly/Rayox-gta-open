@@ -127,3 +127,4 @@ ACMD:[4]motd(playerid, params[]) {
     SendMsgF(playerid, COLOR_YELLOW, "(NEW MOTD) "C_BLUE"%s", params);
     return 1;
 }
+

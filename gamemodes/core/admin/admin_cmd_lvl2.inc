@@ -45,3 +45,4 @@ ACMD:[2]unjail(playerid, params[])
     Player_ReleaseFromJail(targetid);
     return 1;
 }
+

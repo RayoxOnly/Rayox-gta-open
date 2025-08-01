@@ -39,3 +39,5 @@ ACMD:[5]skick(playerid, params[])
     Kick(target);
     return 1;
 }
+
+
