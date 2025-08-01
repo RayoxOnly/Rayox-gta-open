@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="https://images-ext-1.discordapp.net/external/9bnqMJR8BELEgIBP8pyZzXRt2WJ0NmIWpsNjwcvtdMs/https/i.ibb.co/SRLzzcn/gtaopen-reddaddy.png" alt="Logo">
+	<img src="https://i.postimg.cc/WzVRvsQk/Banner-white.png" alt="Logo">
 </p>
 
 ##### A Cops and robbers mode based in Los Santos with features including...
